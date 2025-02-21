@@ -2,7 +2,7 @@ local M = {}
 
 M.run_jupytext_command = function(input_file, options)
   local cmd = ""
-  if vim.g.python3_host_prog ~= nil then
+  if vim.g.python3_host_prog ~= nil and vim.fn.executable "jupytext" == 0 then
     cmd = vim.g.python3_host_prog .. " -m "
   end
 
